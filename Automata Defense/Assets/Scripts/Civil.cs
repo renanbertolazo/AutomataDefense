@@ -6,26 +6,26 @@ public class Civil : MonoBehaviour
 {   
 
     public float speed;
-    public int vida = 100;
+    public double vida = 100;
     public GameObject TORRE1;
     // Start is called before the first frame update
     void Awake()
     {
-        transform.tag = "Player";
-        print ("Hello World!");
+        //transform.tag = "Player";
+        //print ("Hello World!");
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        print (vida);
+        //print (vida);
         //Destroy(GameObject);
-        print (transform.position);
-        if (vida < 0) {
+        //print (transform.position);
+        /*if (vida == 0) {
             Destroy(gameObject,1);
         }
-        //vida += -1;
+        vida += 0.01;*/
     }
 
     void Move()
@@ -38,5 +38,10 @@ public class Civil : MonoBehaviour
 
         Instantiate(TORRE1,transform.position,transform.rotation);
 
+    }
+
+    public void setVida(int vida1){
+
+        vida = vida1;
     }
 }
