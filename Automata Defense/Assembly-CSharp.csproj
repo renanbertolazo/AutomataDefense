@@ -36,11 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Civil.cs" />
      <Compile Include="Assets\Scripts\Destroy.cs" />
+     <Compile Include="Assets\Scripts\RecursosJogador.cs" />
      <Compile Include="Assets\Scripts\Seguidor.cs" />
      <Compile Include="Assets\Scripts\TorreColisor.cs" />
      <Compile Include="Assets\Scripts\TorreIA.cs" />
+     <Compile Include="Assets\Scripts\TorreInput.cs" />
      <Compile Include="Assets\pos.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
