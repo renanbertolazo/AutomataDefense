@@ -6789,18 +6789,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3228392293228124350}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &404617154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404617148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a353b2cbd1a8a234abd196445d206bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &496034533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2763094705104781501, guid: 68d8399e749ecb343979c557fec291b9,
@@ -7058,6 +7046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EntradaAutomato
       objectReference: {fileID: 0}
+    - target: {fileID: 2763094705104781501, guid: 68d8399e749ecb343979c557fec291b9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2763094705491903840, guid: 68d8399e749ecb343979c557fec291b9,
         type: 3}
       propertyPath: m_Name
@@ -7183,6 +7176,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6564503903312122836}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &818083766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6564503903576482919, guid: f8b530a976ad46447a8143b6165bfc87,
+    type: 3}
+  m_PrefabInstance: {fileID: 6564503903312122836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &856689311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7201,7 +7200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &856689312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7389,8 +7388,8 @@ GameObject:
   - component: {fileID: 1194655104}
   - component: {fileID: 1194655102}
   m_Layer: 0
-  m_Name: Seguidor
-  m_TagString: Untagged
+  m_Name: Monstro
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7404,9 +7403,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194655101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46a20ac116b035a4ca0796c49c1d95dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 07a4f7a8216a5054d968e52cbb5a4d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: {fileID: 1194655101}
 --- !u!212 &1194655104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7507,7 +7507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4658955d06d9e3843912c7b7c5952179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TORRE1: {fileID: 6564503903576482919, guid: f8b530a976ad46447a8143b6165bfc87, type: 3}
+  Torre: {fileID: 818083766}
 --- !u!4 &1786817837
 Transform:
   m_ObjectHideFlags: 0
@@ -8712,6 +8712,21 @@ PrefabInstance:
       propertyPath: TORRE1
       value: 
       objectReference: {fileID: 818083761}
+    - target: {fileID: 3228392292824215423, guid: ad29ca8edc6c32341baccab3507af54c,
+        type: 3}
+      propertyPath: children
+      value: 
+      objectReference: {fileID: 404617148}
+    - target: {fileID: 3228392292824215423, guid: ad29ca8edc6c32341baccab3507af54c,
+        type: 3}
+      propertyPath: RecursosJogador
+      value: 
+      objectReference: {fileID: 675777162}
+    - target: {fileID: 9196097034150028147, guid: ad29ca8edc6c32341baccab3507af54c,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 404617148}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad29ca8edc6c32341baccab3507af54c, type: 3}
 --- !u!1001 &6564503903312122836
@@ -8731,10 +8746,15 @@ PrefabInstance:
       propertyPath: TextoAutomato
       value: 
       objectReference: {fileID: 1231810036}
+    - target: {fileID: 2843670146418032410, guid: f8b530a976ad46447a8143b6165bfc87,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6564503903576482917, guid: f8b530a976ad46447a8143b6165bfc87,
         type: 3}
       propertyPath: m_Name
-      value: TORRE1
+      value: Torre
       objectReference: {fileID: 0}
     - target: {fileID: 6564503903576482917, guid: f8b530a976ad46447a8143b6165bfc87,
         type: 3}
@@ -8744,12 +8764,12 @@ PrefabInstance:
     - target: {fileID: 6564503903576482919, guid: f8b530a976ad46447a8143b6165bfc87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.05
+      value: -3.84
       objectReference: {fileID: 0}
     - target: {fileID: 6564503903576482919, guid: f8b530a976ad46447a8143b6165bfc87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.71
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 6564503903576482919, guid: f8b530a976ad46447a8143b6165bfc87,
         type: 3}

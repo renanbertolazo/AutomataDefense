@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {   
     //no Serializa apenas a class e o editor pode ver a variavel
-    [SerializeField] private Transform TORRE1;
+    [SerializeField] private Transform Torre;
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class BuildingManager : MonoBehaviour
                 Instantiate(TORRE1, GetMouseWorldPosition(), Quaternion.identity);
             }*/
             if(Input.GetKeyDown(KeyCode.T)){
-                Instantiate(TORRE1, GetMouseWorldPosition(), Quaternion.identity);
+                Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
             }
     
     }

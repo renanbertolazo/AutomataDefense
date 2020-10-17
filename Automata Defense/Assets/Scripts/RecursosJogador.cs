@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecursosJogador : MonoBehaviour
-{   
+public class RecursosJogador : MonoBehaviour {   
+
+    public static RecursosJogador Instance { get; private set; }
 
     public int vidaJogador;
     public int scoreJogador;
-
     public bool gameOver;
 
-
+    private void Awake() {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start() {
         vidaJogador = 30;
