@@ -17,7 +17,7 @@ public class pos : MonoBehaviour
         //transform.localPosition += civil.transform.position * Time.deltaTime * 5;
         //print (civil.GetComponent<Civil>().vida);
         opa = civil.GetComponent<Civil>();
-        opa.setVida(0);
+        opa.SetVida(0);
         //Vector3 vector = new Vector3(civil1.transform.position.x,civil1.transform.position.y,civil1.transform.position.z);
         //pos1.text = "vector.toString()"; 
     }

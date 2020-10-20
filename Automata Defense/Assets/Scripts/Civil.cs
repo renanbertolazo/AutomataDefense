@@ -8,7 +8,7 @@ public class Civil : MonoBehaviour
 {   
     public GameObject children;
     public float speed;
-    public double vida = 100;
+    public int vida = 100;
 
     public string palavra;
     //public GameObject Torre;
@@ -17,41 +17,46 @@ public class Civil : MonoBehaviour
     {
         //transform.tag = "Player";
         //print ("Hello World!");
-        palavra = "hello men";
+        palavra = GeradorDePalavra();
         //palavra = children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text;
         children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().SetText(palavra);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         Move();
-
-        
-        //print (vida);
-        //Destroy(GameObject);
-        //print (transform.position);
-        /*if (vida == 0) {
-            Destroy(gameObject,1);
-        }
-        vida += 0.01;*/
+        VerificaVida();
     }
 
-    void Move()
-    {
+    void Move() {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0f);
         transform.position += movement * Time.deltaTime * 2;
     }
 
-    /*
+    void VerificaVida() {
+        if (vida == 0) {
+            Destroy(this.gameObject,0);
+            //score aumentando bruscamente precisa concertar..
+            RecursosJogador.Instance.DiminuiVida(1);
+        }
+    }
+
+    
     void OnMouseDown(){
 
-        Instantiate(Torre,transform.position,transform.rotation);
+        Destroy(this.gameObject,0);
 
     }
-    */
-    public void setVida(int valor){
+    
+    public void SetVida(int valor) {
 
         vida = valor;
+    }
+
+    private string GeradorDePalavra() {
+        
+        string resultado = "Hello men";
+        
+        return resultado;
     }
 }

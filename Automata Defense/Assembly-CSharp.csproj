@@ -38,11 +38,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Civil.cs" />
-     <Compile Include="Assets\Scripts\Destroy.cs" />
+     <Compile Include="Assets\Scripts\Jogo.cs" />
      <Compile Include="Assets\Scripts\Monstro.cs" />
+     <Compile Include="Assets\Scripts\PauseJogo.cs" />
      <Compile Include="Assets\Scripts\RecursosJogador.cs" />
      <Compile Include="Assets\Scripts\Texto.cs" />
-     <Compile Include="Assets\Scripts\TorreColisor.cs" />
      <Compile Include="Assets\Scripts\TorreIA.cs" />
      <Compile Include="Assets\Scripts\TorreInput.cs" />
      <Compile Include="Assets\pos.cs" />

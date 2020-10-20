@@ -12,23 +12,29 @@ public class BuildingManager : MonoBehaviour
     {
         
         mainCamera = Camera.main;
-        Debug.Log("Oie");
+        //Debug.Log("Oie");
 
     }
 
     // Update is called once per frame
     void Update()
     {   
-
-        
             //TORRE1.position = GetMouseWorldPosition();
             /*if(Input.GetMouseButtonDown(0)) {
                 Instantiate(TORRE1, GetMouseWorldPosition(), Quaternion.identity);
-            }*/
+            }
             if(Input.GetKeyDown(KeyCode.T)){
                 Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
             }
+            */
+            CriaTorre();
     
+    }
+
+    public void CriaTorre() {
+        if(Input.GetKeyDown(KeyCode.T)){
+                Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
+            }
     }
 
     //pega a posicao do mouse e converte para, a posicao do mundo do jogo 
