@@ -1,0 +1,19 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Chegada : MonoBehaviour
+{   
+    //DETECTA SE O OBJETO QUE COLIDIU É DA TAG PLAYER, E DESTROI O OBJETO, E DIMINUI A VIDA E O SCORE
+    public void OnCollisionEnter2D(Collision2D collision2D)
+    {   
+        Debug.Log("Colidiu");
+        //If the object we collided with was a Runner and not a Catcher.
+        if (collision2D.gameObject.tag == "Player")
+        {
+            Destroy(collision2D.gameObject,0);
+            RecursosJogador.Instance.DiminuiVida(1);
+            RecursosJogador.Instance.DiminuiScore(1);
+        }
+    }
+}

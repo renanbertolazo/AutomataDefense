@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {   
     //no Serializa apenas a class e o editor pode ver a variavel
-    [SerializeField] private Transform Torre;
+    [SerializeField] private GameObject Torre;
     private Camera mainCamera;
     // Start is called before the first frame update
     void Start()

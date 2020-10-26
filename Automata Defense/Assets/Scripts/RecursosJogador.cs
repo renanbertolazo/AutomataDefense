@@ -32,6 +32,11 @@ public class RecursosJogador : MonoBehaviour {
     public void GameOver(bool status) {
         gameOver = status;
     }
+
+    public bool IsGameOver() {
+        if(gameOver) return true;
+        else return false;
+    }
     public void AumentaVida(int valor) {
         vidaJogador += valor;
         //Debug.Log(vidaJogador);

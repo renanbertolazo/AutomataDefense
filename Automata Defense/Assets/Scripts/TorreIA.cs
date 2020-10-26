@@ -11,7 +11,7 @@ public class TorreIA : MonoBehaviour
     public Transform Target;
     public string TextoAutomato;
     public bool Detected;
-
+    public float Radius;
     Vector2 Direction;
 
 
@@ -22,6 +22,7 @@ public class TorreIA : MonoBehaviour
     void Start()
     {
        Range = 4f;
+       Radius = 4f;
        this.gameObject.transform.GetChild(0).gameObject.SetActive(true); 
     }
 
@@ -31,16 +32,21 @@ public class TorreIA : MonoBehaviour
         Vector2 targetPos = Target.position;
 
         Direction = targetPos - (Vector2)transform.position;
-
-        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position,Direction,Range);
+        //usar para retornar um vetor de alvos
+        RaycastHit2D rayInfo;
+        //rayInfo = Physics2D.queriesStartInColliders(true);
+        Physics2D.queriesStartInColliders = true;
+        // colocar em outra layermask dai nao detecta
+        rayInfo = Physics2D.CircleCast(transform.position,Radius,Direction,Range);
         if (rayInfo)
         {
             if(rayInfo.collider.gameObject.tag == "Player")
             {   
+                print(rayInfo.collider.gameObject.GetComponent<Civil>().palavra);
                 print("entrou no if rayInfo.collider.gameObject.tag");
                 if (Detected == false)
                 {   
-                    print("detectado");
+                    //print("detectado");
                     Detected = true;
                 }
             }
@@ -48,13 +54,13 @@ public class TorreIA : MonoBehaviour
             {
                 if (Detected == true)
                 {   
-                    print("saiu do detectado");
+                    //print("saiu do detectado");
                     Detected = false;
                 }
             }
         }
         
-
+        //Debug.DrawRay(transform.position, Direction * Range, Color.red);
         Debug.Log(TextoAutomato);
     }
     void OnDrawGizmosSelected(){
@@ -75,10 +81,19 @@ public class TorreIA : MonoBehaviour
     }
 
     void OnMouseDown() {
+        this.gameObject.transform.GetChild(0)
+        .gameObject.transform.GetChild(0)
+        .gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text = TextoAutomato;
+
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        //Destroy(this.gameObject,0);
     }
 
     public void EscondeCanvas() {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
     } 
+
+    public void DestroiTorre() {
+        Destroy(this.gameObject,0);
+    }
 }

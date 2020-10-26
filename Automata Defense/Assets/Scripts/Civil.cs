@@ -42,11 +42,11 @@ public class Civil : MonoBehaviour
     }
 
     
-    void OnMouseDown(){
+    //void OnMouseDown(){
 
-        Destroy(this.gameObject,0);
+        //Destroy(this.gameObject,0);
 
-    }
+    //}
     
     public void SetVida(int valor) {
 
