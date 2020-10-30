@@ -24,8 +24,10 @@ public class Civil : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Move();
+        //Move();
         VerificaVida();
+        Vector3 alvo = new Vector3(2f,0f,0f);
+        transform.position = Vector3.MoveTowards(transform.position, alvo, 1f*Time.deltaTime*2);
     }
 
     void Move() {
@@ -47,7 +49,10 @@ public class Civil : MonoBehaviour
         //Destroy(this.gameObject,0);
 
     //}
-    
+    public void TiraVida(int valor) {
+
+        vida -= valor;
+    }
     public void SetVida(int valor) {
 
         vida = valor;

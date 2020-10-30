@@ -36,10 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bala.cs" />
      <Compile Include="Assets\Scripts\BotaoJogar.cs" />
      <Compile Include="Assets\Scripts\BuildingManager.cs" />
      <Compile Include="Assets\Scripts\Chegada.cs" />
      <Compile Include="Assets\Scripts\Civil.cs" />
+     <Compile Include="Assets\Scripts\Gerador.cs" />
      <Compile Include="Assets\Scripts\Jogo.cs" />
      <Compile Include="Assets\Scripts\Monstro.cs" />
      <Compile Include="Assets\Scripts\PauseJogo.cs" />
