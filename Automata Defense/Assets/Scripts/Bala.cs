@@ -7,7 +7,7 @@ public class Bala : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(this.gameObject,2);
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Bala : MonoBehaviour
         //aqui pode remover a vida do objeto
         Debug.Log(Col.gameObject.name);
         if( Col.gameObject.tag == "Player") {
-        Col.gameObject.transform.GetComponent<Civil>().TiraVida(20);
+        //Col.gameObject.transform.GetComponent<Civil>().TiraVida(20);
         Destroy(this.gameObject,0);
         }
 

@@ -1,14 +1,16 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-//[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+
 
 public class Monstro : MonoBehaviour
 {
     private GameObject player;
-    //public UnityEngine.AI.NavMeshAgent navMesh;
+
+    //public Seeker seeker;
     //public TMP_Text texto;
     public GameObject Alvo;
     public GameObject children;
@@ -33,8 +35,9 @@ public class Monstro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Vector3 alvo = new Vector3(2f,0f,0f);
-        transform.position = Vector3.MoveTowards(transform.position, alvo, 1f*Time.deltaTime*2);
+        
+        //Vector3 alvo = new Vector3(2f,0f,0f);
+        //transform.position = Vector3.MoveTowards(transform.position, alvo, 1f*Time.deltaTime*2);
         //Move();
         //Debug.Log(children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text);
         //UnityEngine.AI.NavMeshAgent.Warp(player.transform.position);
@@ -42,9 +45,10 @@ public class Monstro : MonoBehaviour
         //navMesh.SetDestination = (player.transform.position);
     }
 
-    void Move()
+    /*void Move()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"), 0f);
         transform.position += movement * Time.deltaTime * 2;
     }
+    */
 }

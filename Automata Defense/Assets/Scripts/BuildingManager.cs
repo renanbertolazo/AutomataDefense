@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class BuildingManager : MonoBehaviour
 {   
     //no Serializa apenas a class e o editor pode ver a variavel
     [SerializeField] private GameObject Torre;
     private Camera mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,9 @@ public class BuildingManager : MonoBehaviour
     public void CriaTorre() {
         if(Input.GetKeyDown(KeyCode.T)){
                 Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
+                AstarPath.active.Scan();
             }
+        
     }
 
     //pega a posicao do mouse e converte para, a posicao do mundo do jogo 

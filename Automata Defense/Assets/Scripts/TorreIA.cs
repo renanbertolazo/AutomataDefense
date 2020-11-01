@@ -50,7 +50,7 @@ public class TorreIA : MonoBehaviour
         //rayInfo = Physics2D.queriesStartInColliders(true);
         Physics2D.queriesStartInColliders = true;
         // colocar em outra layermask dai nao detecta
-        rayInfo = Physics2D.CircleCast(transform.position,Radius,Direction,Range, ~IgnoreMe);
+        rayInfo = Physics2D.CircleCast(transform.position,Radius,Direction,Range, IgnoreMe);
         if (rayInfo)
         {   
             Debug.Log(rayInfo.collider.gameObject.name);
@@ -59,6 +59,7 @@ public class TorreIA : MonoBehaviour
                 Target = rayInfo.collider.gameObject.transform;
                 Vector2 targetPos = Target.position;
                 Direction = targetPos - (Vector2)transform.position;
+                
                 //Debug.Log(Direction);
                 //Atira();
                 if(Time.time > nextTimeToFire)
@@ -95,13 +96,24 @@ public class TorreIA : MonoBehaviour
         */
     }
 
-    void Atira()
-    {
+    void RotateToEnemy() {
+        Quaternion rotation = Quaternion.LookRotation
+        (Target.transform.position - transform.position, transform.TransformDirection(Vector3.up));
+        transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+        
+        /*
+        Quaternion rotation = Quaternion.LookRotation
+        (Target.transform.position - this.gameObject.transform.GetChild(1).gameObject.transform.position, transform.TransformDirection(Vector3.up));
+        this.gameObject.transform.GetChild(1).gameObject.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+        */
+    }
+
+    void Atira() {
         GameObject BulletIns = Instantiate(bullet, Shootpoint.position, Quaternion.identity);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
 
-    void OnDrawGizmosSelected(){
+    void OnDrawGizmosSelected() {
         Gizmos.DrawWireSphere(transform.position,Range);
     }
 
@@ -133,5 +145,6 @@ public class TorreIA : MonoBehaviour
 
     public void DestroiTorre() {
         Destroy(this.gameObject,0);
+        AstarPath.active.Scan();
     }
 }

@@ -36,7 +36,7 @@ public class Civil : MonoBehaviour
     }
 
     void VerificaVida() {
-        if (vida == 0) {
+        if (vida <= 0) {
             Destroy(this.gameObject,0);
             //score aumentando bruscamente precisa concertar..
             RecursosJogador.Instance.DiminuiVida(1);

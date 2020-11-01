@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 6564503903576482912}
   - component: {fileID: 6564503903576482913}
   - component: {fileID: 2654061352194520868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torre
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -1052,18 +1052,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237daafcd4b187c4c8a21622248a82da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 4
+  Range: 2
   Target: {fileID: 3228392292824215296, guid: ad29ca8edc6c32341baccab3507af54c, type: 3}
   TextoAutomato: 
   Detected: 0
-  Radius: 4
+  Radius: 2
   bullet: {fileID: 3081041834724585063, guid: 3e5d92ef82c7d314b92ec7e79e192c8b, type: 3}
   FireRate: 2
   Shootpoint: {fileID: 6564503903576482919}
   Force: 500
   IgnoreMe:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
 --- !u!50 &2654061352194520868
 Rigidbody2D:
   serializedVersion: 4
