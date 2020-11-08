@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\Chegada.cs" />
      <Compile Include="Assets\Scripts\Civil.cs" />
      <Compile Include="Assets\Scripts\Gerador.cs" />
-     <Compile Include="Assets\Scripts\Grafo.cs" />
      <Compile Include="Assets\Scripts\Jogo.cs" />
      <Compile Include="Assets\Scripts\Monstro.cs" />
      <Compile Include="Assets\Scripts\PauseJogo.cs" />

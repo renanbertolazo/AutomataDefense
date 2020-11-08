@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Chegada : MonoBehaviour
 {   
+    public static Chegada Instance { get; private set; }
+    
+    private void Awake() {
+        //colocando a instancia global para ser o objeto
+        Instance = this;
+    }
+
+    public Transform GetTransform() {
+        return this.gameObject.transform;
+    }
+
     //DETECTA SE O OBJETO QUE COLIDIU É DA TAG PLAYER, E DESTROI O OBJETO, E DIMINUI A VIDA E O SCORE
     public void OnCollisionEnter2D(Collision2D collision2D)
     {   
