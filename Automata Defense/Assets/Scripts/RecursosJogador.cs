@@ -23,7 +23,7 @@ public class RecursosJogador : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(vidaJogador == 0){
+        if(vidaJogador <= 0){
             Debug.Log("Game Over");
             GameOver(true);
         }

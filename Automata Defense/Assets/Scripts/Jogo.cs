@@ -9,6 +9,7 @@ public class Jogo : MonoBehaviour
     public int qtd_monstro;
     public int qtd_civil;
     public float tempo;
+    public float tempo2;
     public GameObject Gerador;
     //public GameObject Monstro;
     // Start is called before the first frame update
@@ -32,8 +33,11 @@ public class Jogo : MonoBehaviour
     private void GeradorMonstro() {
         if(Time.time > tempo) {
                 tempo = Time.time + 2;
-                Gerador.GetComponent<Gerador>().InstanciaMonstro();
-                qtd_monstro -=1;
+                float valorInteiro = Random.Range(0f,1f);
+                print(valorInteiro); 
+                if(valorInteiro < 0.5f) Gerador.GetComponent<Gerador>().InstanciaMonstro();
+                if(valorInteiro > 0.5f) Gerador.GetComponent<Gerador>().InstanciaCivil();
+                qtd_monstro -=1; 
         }
     }
 

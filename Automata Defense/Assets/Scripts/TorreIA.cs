@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //A TORRE NÃO PODE TER COLLIDER SE NÃO, NÃO FUNCIONA
-public class TorreIA : MonoBehaviour
-{   
+public class TorreIA : MonoBehaviour {   
 
     public float Range;
     public Transform Target;
@@ -21,27 +20,60 @@ public class TorreIA : MonoBehaviour
     public float Force;
 
     //Máscara a ser ignorada
-    public LayerMask IgnoreMe;
+    public LayerMask LayerAlvo;
 
     // Start is called before the first frame update
     void Awake() {
         //this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         //Shootpoint.transform.position = this.transform.position;
     }
-    void Start()
-    {
-       //Range = 4f;
-       //Radius = 2f;
+    void Start() {
+
        this.gameObject.transform.GetChild(0).gameObject.SetActive(true); 
-       //IgnoreMe.value = 0;
+       
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        IA();
+    void Update() {
+        //IA();
+        IA2();
     }
 
+
+    private void IA2() {
+        
+        //RaycastHit2D rayInfo;
+        //print(Target);
+        Physics2D.queriesStartInColliders = true;
+
+        if(!Target) {
+            RaycastHit2D[] rayInfo = Physics2D.CircleCastAll(transform.position, Radius, Direction, Range, LayerAlvo);
+            foreach(RaycastHit2D hit in rayInfo) {
+                if(hit.collider.gameObject.transform.name == "Monstro" || hit.collider.gameObject.transform.name == "Monstro(Clone)") {
+                    if(hit.collider.gameObject.transform.GetComponent<Monstro>().palavra == "Monstro") {
+                    print(hit.collider.gameObject.transform.position);
+                    Target = hit.collider.gameObject.transform;
+                    break;
+                    }
+                }
+            }
+        }
+
+        if(Target) {
+            Vector2 targetPos = Target.position;
+            Direction = targetPos - (Vector2)transform.position;
+            float dist = Vector3.Distance(targetPos, transform.position);
+            if(Time.time > nextTimeToFire && dist < 3f) {
+                nextTimeToFire = Time.time + 1 / FireRate;
+                Atira();
+                //print("Distance to other: " + dist);
+            }
+            if(dist > 3f) Target = null;
+        }
+
+    }
+        
+    
     public void IA() {
         
         //os tiros nao ocorrem pois está apenas reconhecendo as torres
@@ -50,50 +82,32 @@ public class TorreIA : MonoBehaviour
         //rayInfo = Physics2D.queriesStartInColliders(true);
         Physics2D.queriesStartInColliders = true;
         // colocar em outra layermask dai nao detecta
-        rayInfo = Physics2D.CircleCast(transform.position,Radius,Direction,Range, IgnoreMe);
-        if (rayInfo)
-        {   
+        rayInfo = Physics2D.CircleCast(transform.position, Radius, Direction, Range, LayerAlvo);
+        if (rayInfo) {   
             Debug.Log(rayInfo.collider.gameObject.name);
-            if(rayInfo.collider.gameObject.tag == "Player")
-            {   
+            if(rayInfo.collider.gameObject.tag == "Player") {   
                 Target = rayInfo.collider.gameObject.transform;
                 Vector2 targetPos = Target.position;
                 Direction = targetPos - (Vector2)transform.position;
-                
-                //Debug.Log(Direction);
-                //Atira();
-                if(Time.time > nextTimeToFire)
-            {
-                nextTimeToFire = Time.time + 1 / FireRate;
-                Atira();
-            }
+
+                float dist = Vector3.Distance(targetPos, transform.position);
+
+                if(Time.time > nextTimeToFire && dist < 3f) {
+                    nextTimeToFire = Time.time + 1 / FireRate;
+                    Atira();
+                    print("Distance to other: " + dist);
+                }
                 //print(rayInfo.collider.gameObject.GetComponent<Civil>().palavra);
                 //print("entrou no if rayInfo.collider.gameObject.tag");
-                if (Detected == false)
-                {   
+                if (Detected == false) {   
                     //print("detectado");
                     Detected = true;
                 }
             }
 
             Detected = false;
-            /*else
-            {
-                if (Detected == true)
-                {   
-                    //print("saiu do detectado");
-                    Detected = false;
-                }
-            }
-            */
-        //this.transform.up = Direction;
         }
-        /*
-        if (Detected)
-        {
-            transform.up = Direction;
-        }
-        */
+        
     }
 
     void RotateToEnemy() {

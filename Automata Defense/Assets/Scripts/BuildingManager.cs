@@ -10,8 +10,7 @@ public class BuildingManager : MonoBehaviour
     private Camera mainCamera;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
         mainCamera = Camera.main;
         //Debug.Log("Oie");
@@ -19,8 +18,7 @@ public class BuildingManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {   
+    void Update() {   
             //TORRE1.position = GetMouseWorldPosition();
             /*if(Input.GetMouseButtonDown(0)) {
                 Instantiate(TORRE1, GetMouseWorldPosition(), Quaternion.identity);

@@ -1052,16 +1052,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237daafcd4b187c4c8a21622248a82da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 2
-  Target: {fileID: 3228392292824215296, guid: ad29ca8edc6c32341baccab3507af54c, type: 3}
+  Range: 3
+  Target: {fileID: 0}
   TextoAutomato: 
   Detected: 0
-  Radius: 2
+  Radius: 3
   bullet: {fileID: 3081041834724585063, guid: 3e5d92ef82c7d314b92ec7e79e192c8b, type: 3}
   FireRate: 2
   Shootpoint: {fileID: 6564503903576482919}
   Force: 500
-  IgnoreMe:
+  LayerAlvo:
     serializedVersion: 2
     m_Bits: 256
 --- !u!50 &2654061352194520868
