@@ -33,10 +33,20 @@ public class BuildingManager : MonoBehaviour
 
     public void CriaTorre() {
         if(Input.GetKeyDown(KeyCode.T)){
-                Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
-                AstarPath.active.Scan();
+                if(ValidaPosicao()) {
+                    Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
+                    AstarPath.active.Scan();   
+                }
+                //Instantiate(Torre, GetMouseWorldPosition(), Quaternion.identity);
+                //AstarPath.active.Scan();
             }
-        
+    }
+
+    private bool ValidaPosicao() {
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if(mouseWorldPosition.x > 2.5 || mouseWorldPosition.x < -8.5) return false;
+        if(mouseWorldPosition.y > 4.5 || mouseWorldPosition.y < -4.5) return false;
+        return true;
     }
 
     //pega a posicao do mouse e converte para, a posicao do mundo do jogo 

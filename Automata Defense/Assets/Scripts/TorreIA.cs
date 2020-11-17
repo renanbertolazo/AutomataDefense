@@ -26,6 +26,7 @@ public class TorreIA : MonoBehaviour {
     void Awake() {
         //this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         //Shootpoint.transform.position = this.transform.position;
+        transform.rotation.Normalize();
     }
     void Start() {
 
@@ -51,7 +52,7 @@ public class TorreIA : MonoBehaviour {
             foreach(RaycastHit2D hit in rayInfo) {
                 if(hit.collider.gameObject.transform.name == "Monstro" || hit.collider.gameObject.transform.name == "Monstro(Clone)") {
                     if(hit.collider.gameObject.transform.GetComponent<Monstro>().palavra == "Monstro") {
-                    print(hit.collider.gameObject.transform.position);
+                    //print(hit.collider.gameObject.transform.position);
                     Target = hit.collider.gameObject.transform;
                     break;
                     }
@@ -60,6 +61,7 @@ public class TorreIA : MonoBehaviour {
         }
 
         if(Target) {
+            RotateToEnemy();
             Vector2 targetPos = Target.position;
             Direction = targetPos - (Vector2)transform.position;
             float dist = Vector3.Distance(targetPos, transform.position);
@@ -111,15 +113,22 @@ public class TorreIA : MonoBehaviour {
     }
 
     void RotateToEnemy() {
+        Transform arma = this.gameObject.transform.GetChild(1).gameObject.transform;
+        if(arma.position.x > Target.transform.position.x) {
+            //ainda a testar
+        }
+        else {
+            arma.right = Target.transform.position;
+        }
+        /*
         Quaternion rotation = Quaternion.LookRotation
         (Target.transform.position - transform.position, transform.TransformDirection(Vector3.up));
         transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-        
-        /*
-        Quaternion rotation = Quaternion.LookRotation
-        (Target.transform.position - this.gameObject.transform.GetChild(1).gameObject.transform.position, transform.TransformDirection(Vector3.up));
-        this.gameObject.transform.GetChild(1).gameObject.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
         */
+        Quaternion rotation = Quaternion.LookRotation
+        (Target.transform.position - this.gameObject.transform.GetChild(1).gameObject.transform.position, arma.TransformDirection(Vector3.up));
+        this.gameObject.transform.GetChild(1).gameObject.transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
+        
     }
 
     void Atira() {

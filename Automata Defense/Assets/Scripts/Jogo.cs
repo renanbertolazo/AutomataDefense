@@ -13,18 +13,24 @@ public class Jogo : MonoBehaviour
     public GameObject Gerador;
     //public GameObject Monstro;
     // Start is called before the first frame update
+    void Awake() {
+        qtd_monstro = 0;
+        qtd_civil = 0;
+    }
     void Start() {
         nivel = 0;
-        qtd_monstro = 0;
         tempo = 0;
+        UpdateNivel();
+        Mecanica();
     }
 
     // Update is called once per frame
     void Update() {
         ChecaGameOver();
         AtualizaStatusJogador();
-        if (qtd_monstro == 0) {
+        if (qtd_monstro == 0 && qtd_civil == 0) {
             UpdateNivel();
+            ChecaVitoria();
             Mecanica();
         }
         GeradorMonstro();
@@ -32,12 +38,31 @@ public class Jogo : MonoBehaviour
 
     private void GeradorMonstro() {
         if(Time.time > tempo) {
-                tempo = Time.time + 2;
-                float valorInteiro = Random.Range(0f,1f);
-                print(valorInteiro); 
-                if(valorInteiro < 0.5f) Gerador.GetComponent<Gerador>().InstanciaMonstro();
-                if(valorInteiro > 0.5f) Gerador.GetComponent<Gerador>().InstanciaCivil();
-                qtd_monstro -=1; 
+            bool invocado = false;
+            tempo = Time.time + 2;
+            float valorInteiro = Random.Range(0f,1f);
+            if(qtd_civil == 0 && !invocado) {
+                Gerador.GetComponent<Gerador>().InstanciaMonstro();
+                qtd_monstro -=1;
+                invocado = true; 
+            }
+            if(qtd_monstro == 0 && !invocado) {
+                Gerador.GetComponent<Gerador>().InstanciaCivil();
+                qtd_civil -=1;
+                invocado = true;
+            }
+            if( qtd_civil !=0 && qtd_monstro!=0 && !invocado) {
+                if(valorInteiro < 0.7f) {
+                    Gerador.GetComponent<Gerador>().InstanciaMonstro();
+                    qtd_monstro -=1; 
+                }
+
+                if(valorInteiro > 0.7f) {
+                    Gerador.GetComponent<Gerador>().InstanciaCivil();
+                    qtd_civil -=1;
+                }
+                invocado = true; 
+            }
         }
     }
 
@@ -48,18 +73,18 @@ public class Jogo : MonoBehaviour
         switch(nivel) {
             case 1:
                 qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_monstro = 2;
                 break;
             case 2:
                 qtd_civil = 0;
-                qtd_monstro = 6;
+                qtd_monstro = 3;
                 break;
             case 3:
-                qtd_civil = 0;
-                qtd_monstro = 7;
+                qtd_civil = 1;
+                qtd_monstro = 4;
                 break;
             case 4:
-                qtd_civil = 0;
+                qtd_civil = 2;
                 qtd_monstro = 5;
                 break;
             case 5:
@@ -88,6 +113,14 @@ public class Jogo : MonoBehaviour
     private void ChecaGameOver() {
         if(RecursosJogador.Instance.IsGameOver()) {
             this.transform.GetChild(0).gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    private void ChecaVitoria() {
+        if(nivel == 5 && qtd_civil == 0 && qtd_monstro == 0 && !RecursosJogador.Instance.IsGameOver()) {
+            this.transform.GetChild(2).gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
     }
     public void IrParaMenu() {
@@ -102,13 +135,13 @@ public class Jogo : MonoBehaviour
         //info Vida do Jogador
         this.transform.GetChild(1)
         .gameObject.transform.GetChild(0)
-        .gameObject.transform.GetChild(0)
-        .GetComponent<Text>().text = "Vida: "+RecursosJogador.Instance.vidaJogador.ToString();
+        .gameObject.transform.GetChild(4)
+        .GetComponent<Text>().text = RecursosJogador.Instance.vidaJogador.ToString();
 
         //info Score do Jogador
         this.transform.GetChild(1)
         .gameObject.transform.GetChild(0)
-        .gameObject.transform.GetChild(1)
-        .GetComponent<Text>().text = "Score: "+RecursosJogador.Instance.scoreJogador.ToString();
+        .gameObject.transform.GetChild(5)
+        .GetComponent<Text>().text = RecursosJogador.Instance.scoreJogador.ToString();
     }
 }

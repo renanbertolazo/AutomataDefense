@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +47,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\Scripts\Bala.cs" />
      <Compile Include="Assets\Scripts\BotaoJogar.cs" />
      <Compile Include="Assets\Scripts\BuildingManager.cs" />
@@ -76,87 +86,6 @@
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="PsdPlugin">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -688,31 +617,104 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Animation.Runtime">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="PsdPlugin">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Psdimporter.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEngineBridge.001">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Runtime">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Animation.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Editor">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEditorBridge.001">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Users/renan/Desktop/UNITY PROJETO/Automata Defense/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{0B503710-EFD6-CEFD-8784-1A75AC4A1DC5}</Project>
+      <Project>{68BE2397-7E30-F8C8-A64F-DC9016F2E139}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{4E94DD6D-13BA-75C0-0627-2DDF264291FF}</Project>
+      <Project>{89BEDE1E-583F-49EB-EDD8-BBD42FA9A9D5}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{BD5E94C1-5E12-5B0A-2DE1-4AD133CC599C}</Project>
-      <Name>NavMeshComponentsEditor</Name>
-    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{1AEACBA4-E54C-8F70-AEB8-328077C50E49}</Project>
+      <Project>{8007EFE0-1D92-4F7C-DC34-048B2B631740}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{6146E8A6-6B3B-5199-7488-7A32D3EDFC1E}</Project>
-      <Name>NavMeshComponents</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

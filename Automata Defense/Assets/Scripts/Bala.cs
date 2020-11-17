@@ -18,10 +18,11 @@ public class Bala : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D Col) {
         //aqui pode remover a vida do objeto
-        Debug.Log(Col.gameObject.name);
+        //Debug.Log(Col.gameObject.name);
         if( Col.gameObject.tag == "Player") {
-        //Col.gameObject.transform.GetComponent<Civil>().TiraVida(20);
-        Destroy(this.gameObject,0);
+            //GameObject Alvo = Col.gameObject;
+            //Col.gameObject.transform.GetComponent<Monstro>().TiraVida(20);
+            Destroy(this.gameObject,0);
         }
 
         Physics2D.IgnoreCollision(this.gameObject.GetComponent<Collider2D>(), Col.gameObject.GetComponent<Collider2D>());
