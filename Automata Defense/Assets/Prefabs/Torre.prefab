@@ -752,7 +752,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5464375147949764122}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6564503903576482913}
+        m_MethodName: InsereTextoAutomato
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5969310264982196273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,6 +948,7 @@ GameObject:
   - component: {fileID: 6564503903576482912}
   - component: {fileID: 6564503903576482913}
   - component: {fileID: 2654061352194520868}
+  - component: {fileID: -5538786928392969562}
   m_Layer: 9
   m_Name: Torre
   m_TagString: Torre
@@ -1081,6 +1093,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-5538786928392969562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6564503903576482917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696e89526cbc5dd46ba08becbe254b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7364379420751644167
 GameObject:
   m_ObjectHideFlags: 0

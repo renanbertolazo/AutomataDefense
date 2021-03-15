@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +39,7 @@ public class TorreIA : MonoBehaviour {
     void Update() {
         //IA();
         IA2();
+        
     }
 
 
@@ -141,16 +143,33 @@ public class TorreIA : MonoBehaviour {
     }
 
     public void InsereTextoAutomato() {
-        /*TextoAutomato = 
+        string[] lines;
+        TextoAutomato = 
         this.gameObject.transform.GetChild(0)
-        .gameObject.transform.GetChild(0)
-        .gameObject.transform.GetChild(2)
-        .gameObject.GetComponent<Text>().text;
-        */
+        .gameObject.transform.GetChild(0).GetComponent<InputField>().text;
+        
+        /*
         TextoAutomato = 
         this.gameObject.transform.GetChild(0)
         .gameObject.transform.GetChild(0)
-        .gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text; 
+        .gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text;*/
+        //print(TextoAutomato); 
+        
+        // separa o texto por linhas
+        lines = TextoAutomato.Split ('\n');
+
+        /*
+        foreach(string linha in lines) {
+            print(linha.Length);
+        };*/
+
+        // limpa estado caso for trocado a string do automato
+        this.transform.GetComponent<Automato>().Clear();
+        this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
+        //this.transform.GetComponent<Automato>().printa();
+        print(this.transform.GetComponent<Automato>().Reconhecedor("aaa"));
+        print(this.transform.GetComponent<Automato>().Reconhecedor("aaaa"));
+        print(this.transform.GetComponent<Automato>().isDeterministico());
     }
 
     void OnMouseDown() {
