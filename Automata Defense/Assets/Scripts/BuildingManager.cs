@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class BuildingManager : MonoBehaviour
-{   
+public class BuildingManager : MonoBehaviour {   
     //no Serializa apenas a class e o editor pode ver a variavel
     [SerializeField] private GameObject Torre;
     private Camera mainCamera;

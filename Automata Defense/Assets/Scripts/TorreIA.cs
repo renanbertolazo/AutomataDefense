@@ -4,7 +4,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-//A TORRE NÃO PODE TER COLLIDER SE NÃO, NÃO FUNCIONA
+
 public class TorreIA : MonoBehaviour {   
 
     public float Range;
@@ -38,8 +38,13 @@ public class TorreIA : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         //IA();
-        IA2();
+        //IA2();
+        //Detector();
         
+    }
+
+    void LateUpdate() {
+        Detector();
     }
 
 
@@ -75,6 +80,42 @@ public class TorreIA : MonoBehaviour {
             if(dist > 3f) Target = null;
         }
 
+    }
+
+    public void Detector() {
+        Physics2D.queriesStartInColliders = true;
+
+        if(!Target) {
+            RaycastHit2D[] rayInfo = Physics2D.CircleCastAll(transform.position, Radius, Direction, Range, LayerAlvo);
+            foreach(RaycastHit2D hit in rayInfo) {
+                if(hit.collider.gameObject.transform.GetComponent<Monstro>()) {
+                    string palavra = hit.collider.gameObject.transform.GetComponent<Monstro>().palavra;
+                    if(this.transform.GetComponent<Automato>().Reconhecedor(palavra)){
+                        print("reconheceu");
+                        Target = hit.collider.gameObject.transform;
+                        break;
+                    }
+                }
+                if(hit.collider.gameObject.transform.GetComponent<Civil>()) {
+                    string palavra = hit.collider.gameObject.transform.GetComponent<Civil>().palavra;
+                    if(this.transform.GetComponent<Automato>().Reconhecedor(palavra)){
+                        print("reconheceu");
+                        Target = hit.collider.gameObject.transform;
+                        break;
+                    }
+                }
+            }
+        } else {
+            RotateToEnemy();
+            Vector2 targetPos = Target.position;
+            Direction = targetPos - (Vector2)transform.position;
+            float dist = Vector3.Distance(targetPos, transform.position);
+            if(Time.time > nextTimeToFire && dist < 3f) {
+                nextTimeToFire = Time.time + 1 / FireRate;
+                Atira();
+            }
+        if(dist > 3f) Target = null;
+        }
     }
         
     
@@ -167,9 +208,9 @@ public class TorreIA : MonoBehaviour {
         this.transform.GetComponent<Automato>().Clear();
         this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
         //this.transform.GetComponent<Automato>().printa();
-        print(this.transform.GetComponent<Automato>().Reconhecedor("aaa"));
-        print(this.transform.GetComponent<Automato>().Reconhecedor("aaaa"));
-        print(this.transform.GetComponent<Automato>().isDeterministico());
+        //print(this.transform.GetComponent<Automato>().Reconhecedor("aaa"));
+        //print(this.transform.GetComponent<Automato>().Reconhecedor("aaaa"));
+        //print(this.transform.GetComponent<Automato>().isDeterministico());
     }
 
     void OnMouseDown() {

@@ -14,13 +14,19 @@ public class Civil : MonoBehaviour {
     void Awake() {
         //transform.tag = "Player";
         //print ("Hello World!");
-        palavra = GeradorDePalavra();
-        //palavra = children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text;
+        //palavra = GeradorDePalavra();
+        
+        palavra = GeradorPalavra.Instance.GeraPalavra();
         this.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().SetText(palavra);
+        //palavra = children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text;
+        
+        
     }
 
 
     void Start() {
+        //palavra = GeradorPalavra.Instance.GeraPalavra();
+        //this.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().SetText(palavra);
         this.gameObject.GetComponent<AIDestinationSetter>().target = Chegada.Instance.gameObject.transform;
     }
 

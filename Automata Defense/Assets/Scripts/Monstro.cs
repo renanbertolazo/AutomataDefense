@@ -14,7 +14,8 @@ public class Monstro : MonoBehaviour {
     void Awake() {
         //transform.tag = "Player";
         //print ("Hello World!");
-        palavra = GeradorDePalavra();
+        //palavra = GeradorDePalavra();
+        palavra = GeradorPalavra.Instance.GeraPalavra();
         //palavra = children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text;
         this.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().SetText(palavra);
     }

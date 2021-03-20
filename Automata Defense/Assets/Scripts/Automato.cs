@@ -67,9 +67,9 @@ class Automato : MonoBehaviour {
         bool palavra_lida = false;
         //Console.WriteLine(estado_atual.nome);
         //print("Tamanho:"+this.inicial.Length+ "Nome:"+this.inicial.Length);
-        print(estado_atual.nome);
+        //print(estado_atual.nome);
         foreach (var letra in palavra) {
-            print(letra);
+            //print(letra);
             bool transitou = false;
             Estado estado_transicao_vazia = new Estado();
             bool transicao_vazia = false;
@@ -83,7 +83,7 @@ class Automato : MonoBehaviour {
                     estado_atual = BuscaEstado(transicao.destino);
                     transitou = true;
                     //Console.WriteLine(estado_atual.nome);
-                    print(estado_atual.nome);
+                    //print(estado_atual.nome);
                 };   
             };
             //caso transição seja vazia
@@ -236,16 +236,27 @@ class Automato : MonoBehaviour {
                 estado_x.transicao.Add(trans);
                 this.estado.Add(estado_x);
             } else {
-                bool adicionou = false;
+                bool adicionou_atual = false;
+                bool adicionou_chegada = false;
                 foreach (Estado item in this.estado) {
                     if(Equals(item.nome, estado_atual)) {
                         item.transicao.Add(trans);
-                        adicionou = true;
+                        adicionou_atual = true;
+                    }
+                    if(Equals(item.nome, estado_chegada)) {
+                        item.transicao.Add(trans);
+                        adicionou_chegada = true;
                     }
                 }
-                if(adicionou == false) {
+                if(adicionou_atual == false) {
                     Estado estado_x = new Estado();
                     estado_x.nome = estado_atual;
+                    estado_x.transicao.Add(trans);
+                    this.estado.Add(estado_x);
+                }
+                if(adicionou_chegada == false) {
+                    Estado estado_x = new Estado();
+                    estado_x.nome = estado_chegada;
                     estado_x.transicao.Add(trans);
                     this.estado.Add(estado_x);
                 }
