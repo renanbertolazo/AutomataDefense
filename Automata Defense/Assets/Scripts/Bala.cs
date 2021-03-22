@@ -14,7 +14,12 @@ public class Bala : MonoBehaviour {
         //Debug.Log(Col.gameObject.name);
         if( Col.gameObject.tag == "Player") {
             //GameObject Alvo = Col.gameObject;
-            //Col.gameObject.transform.GetComponent<Monstro>().TiraVida(20);
+            if(Col.gameObject.transform.GetComponent<Monstro>()){
+                Col.gameObject.transform.GetComponent<Monstro>().TiraVida(20);
+            }
+            if(Col.gameObject.transform.GetComponent<Civil>()){
+                Col.gameObject.transform.GetComponent<Civil>().TiraVida(20);
+            }
             Destroy(this.gameObject,0);
         }
 

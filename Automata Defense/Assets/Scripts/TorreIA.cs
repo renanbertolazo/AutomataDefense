@@ -209,7 +209,7 @@ public class TorreIA : MonoBehaviour {
         this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
         //this.transform.GetComponent<Automato>().printa();
         //print(this.transform.GetComponent<Automato>().Reconhecedor("aaa"));
-        //print(this.transform.GetComponent<Automato>().Reconhecedor("aaaa"));
+        //print(this.transform.GetComponent<Automato>().Reconhecedor("dad"));
         //print(this.transform.GetComponent<Automato>().isDeterministico());
     }
 

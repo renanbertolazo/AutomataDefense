@@ -243,10 +243,12 @@ class Automato : MonoBehaviour {
                         item.transicao.Add(trans);
                         adicionou_atual = true;
                     }
-                    if(Equals(item.nome, estado_chegada)) {
-                        item.transicao.Add(trans);
-                        adicionou_chegada = true;
+                    if(!Equals(estado_atual, estado_chegada)) {
+                        if(Equals(item.nome, estado_chegada)) {
+                            adicionou_chegada = true;
+                        }
                     }
+                    
                 }
                 if(adicionou_atual == false) {
                     Estado estado_x = new Estado();
@@ -254,12 +256,14 @@ class Automato : MonoBehaviour {
                     estado_x.transicao.Add(trans);
                     this.estado.Add(estado_x);
                 }
-                if(adicionou_chegada == false) {
-                    Estado estado_x = new Estado();
-                    estado_x.nome = estado_chegada;
-                    estado_x.transicao.Add(trans);
-                    this.estado.Add(estado_x);
+                if(!Equals(estado_atual, estado_chegada)) {
+                    if(adicionou_chegada == false) {
+                        Estado estado_x = new Estado();
+                        estado_x.nome = estado_chegada;
+                        this.estado.Add(estado_x);
+                    } 
                 }
+                
             }
             //Console.WriteLine(estado_atual);
             //Console.WriteLine(simbolo);
