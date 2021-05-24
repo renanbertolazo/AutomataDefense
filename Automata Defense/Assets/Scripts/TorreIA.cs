@@ -188,6 +188,8 @@ public class TorreIA : MonoBehaviour {
         TextoAutomato = 
         this.gameObject.transform.GetChild(0)
         .gameObject.transform.GetChild(0).GetComponent<InputField>().text;
+
+        Transform Mensagem = this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(4);
         
         /*
         TextoAutomato = 
@@ -206,7 +208,30 @@ public class TorreIA : MonoBehaviour {
 
         // limpa estado caso for trocado a string do automato
         this.transform.GetComponent<Automato>().Clear();
-        this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
+        //this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
+        try {
+            this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
+            if(this.transform.GetComponent<Automato>().isDeterministico() == false) {
+            //erro nao determinismo
+                Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Não-Determinístico";
+                Mensagem.gameObject.SetActive(true);
+            } else {
+                Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Automato inserido!";
+                Mensagem.gameObject.SetActive(true);
+            }
+        }
+        catch (System.IndexOutOfRangeException e) {
+            Debug.Log(e.Message);
+        //tela do erro aqui
+            Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Erro de sintaxe";
+            Mensagem.gameObject.SetActive(true);
+        }
+
+        
+
+        //tela cadastrado com sucesso
+
+
         //this.transform.GetComponent<Automato>().printa();
         //print(this.transform.GetComponent<Automato>().Reconhecedor("aaa"));
         //print(this.transform.GetComponent<Automato>().Reconhecedor("dad"));

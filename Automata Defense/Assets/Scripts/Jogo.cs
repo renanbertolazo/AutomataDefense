@@ -19,7 +19,7 @@ public class Jogo : MonoBehaviour
     }
     void Start() {
         nivel = 0;
-        tempo = 0;
+        tempo = Time.time + 2;
         UpdateNivel();
         Mecanica();
     }
@@ -80,7 +80,7 @@ public class Jogo : MonoBehaviour
                 qtd_monstro = 3;
                 break;
             case 3:
-                qtd_civil = 1;
+                qtd_civil = 0;
                 qtd_monstro = 4;
                 break;
             case 4:
@@ -143,5 +143,9 @@ public class Jogo : MonoBehaviour
         .gameObject.transform.GetChild(0)
         .gameObject.transform.GetChild(5)
         .GetComponent<Text>().text = RecursosJogador.Instance.scoreJogador.ToString();
+    }
+
+    public int Nivel_Jogo() {
+        return nivel;
     }
 }

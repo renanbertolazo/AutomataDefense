@@ -52,8 +52,11 @@
      <Compile Include="Assets\Scripts\Chegada.cs" />
      <Compile Include="Assets\Scripts\Civil.cs" />
      <Compile Include="Assets\Scripts\Gerador.cs" />
+     <Compile Include="Assets\Scripts\GeradorLinguagem.cs" />
      <Compile Include="Assets\Scripts\GeradorPalavra.cs" />
+     <Compile Include="Assets\Scripts\ImageLoader.cs" />
      <Compile Include="Assets\Scripts\Jogo.cs" />
+     <Compile Include="Assets\Scripts\Linguagem.cs" />
      <Compile Include="Assets\Scripts\Monstro.cs" />
      <Compile Include="Assets\Scripts\PauseJogo.cs" />
      <Compile Include="Assets\Scripts\RecursosJogador.cs" />

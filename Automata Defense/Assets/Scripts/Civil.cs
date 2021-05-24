@@ -16,7 +16,7 @@ public class Civil : MonoBehaviour {
         //print ("Hello World!");
         //palavra = GeradorDePalavra();
         
-        palavra = GeradorPalavra.Instance.GeraPalavra();
+        palavra = GeradorPalavra.Instance.GeraPalavra(1);
         this.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().SetText(palavra);
         //palavra = children.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text;
         
