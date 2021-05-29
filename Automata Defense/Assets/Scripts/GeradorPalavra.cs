@@ -186,9 +186,21 @@ public class GeradorPalavra : MonoBehaviour {
     }
 
     public void AtualizaImagens() {
-        image0.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
-        image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
-        image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
-        image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[3].dir_imagem);
+        try {
+            if(nivel < 4) {
+                image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
+                image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
+                image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
+            } else {
+                image0.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
+                image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
+                image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
+                image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[3].dir_imagem);
+            }
+            
+        } catch(System.ArgumentOutOfRangeException) {
+            Debug.Log("opa");
+        }
+        
     }
 }
