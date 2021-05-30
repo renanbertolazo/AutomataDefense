@@ -213,17 +213,17 @@ public class TorreIA : MonoBehaviour {
             this.transform.GetComponent<Automato>().Carrega_Arquivo(lines);
             if(this.transform.GetComponent<Automato>().isDeterministico() == false) {
             //erro nao determinismo
-                Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Não-Determinístico";
+                Mensagem.gameObject.transform.GetChild(1).GetComponent<Text>().text = "Não-Determinístico";
                 Mensagem.gameObject.SetActive(true);
             } else {
-                Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Automato inserido!";
+                Mensagem.gameObject.transform.GetChild(1).GetComponent<Text>().text = "Automato inserido!";
                 Mensagem.gameObject.SetActive(true);
             }
         }
         catch (System.IndexOutOfRangeException e) {
             Debug.Log(e.Message);
         //tela do erro aqui
-            Mensagem.gameObject.transform.GetChild(0).GetComponent<Text>().text = "Erro de sintaxe";
+            Mensagem.gameObject.transform.GetChild(1).GetComponent<Text>().text = "Erro de sintaxe";
             Mensagem.gameObject.SetActive(true);
         }
 

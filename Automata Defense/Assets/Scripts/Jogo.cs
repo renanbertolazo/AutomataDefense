@@ -28,10 +28,12 @@ public class Jogo : MonoBehaviour
     void Update() {
         ChecaGameOver();
         AtualizaStatusJogador();
+        AtualizaNivel();
         if (qtd_monstro == 0 && qtd_civil == 0) {
             UpdateNivel();
             ChecaVitoria();
             Mecanica();
+            tempo += 10;
         }
         GeradorMonstro();
     }
@@ -73,39 +75,39 @@ public class Jogo : MonoBehaviour
         switch(nivel) {
             case 1:
                 qtd_civil = 0;
-                qtd_monstro = 2;
+                qtd_monstro = 5;
                 break;
             case 2:
                 qtd_civil = 0;
-                qtd_monstro = 3;
+                qtd_monstro = 7;
                 break;
             case 3:
                 qtd_civil = 0;
-                qtd_monstro = 4;
+                qtd_monstro = 9;
                 break;
             case 4:
-                qtd_civil = 2;
-                qtd_monstro = 5;
+                qtd_civil = 3;
+                qtd_monstro = 9;
                 break;
             case 5:
-                qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_civil = 3;
+                qtd_monstro = 9;
                 break;
             case 6:
-                qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_civil = 3;
+                qtd_monstro = 9;
                 break;
             case 7:
-                qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_civil = 5;
+                qtd_monstro = 15;
                 break;
             case 8:
-                qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_civil = 5;
+                qtd_monstro = 15;
                 break;
             case 9:
-                qtd_civil = 0;
-                qtd_monstro = 5;
+                qtd_civil = 5;
+                qtd_monstro = 15;
                 break;
         }
         
@@ -118,7 +120,7 @@ public class Jogo : MonoBehaviour
     }
 
     private void ChecaVitoria() {
-        if(nivel == 5 && qtd_civil == 0 && qtd_monstro == 0 && !RecursosJogador.Instance.IsGameOver()) {
+        if(nivel > 9 && qtd_civil == 0 && qtd_monstro == 0 && !RecursosJogador.Instance.IsGameOver()) {
             this.transform.GetChild(2).gameObject.SetActive(true);
             Time.timeScale = 0;
         }
@@ -143,8 +145,16 @@ public class Jogo : MonoBehaviour
         .gameObject.transform.GetChild(0)
         .gameObject.transform.GetChild(5)
         .GetComponent<Text>().text = RecursosJogador.Instance.scoreJogador.ToString();
+        
     }
 
+    private void AtualizaNivel() {
+        this.transform.GetChild(5)
+        .gameObject.transform.GetChild(0)
+        .gameObject.transform.GetChild(1)
+        .GetComponent<Text>().text = nivel.ToString();
+
+    }
     public int Nivel_Jogo() {
         return nivel;
     }
