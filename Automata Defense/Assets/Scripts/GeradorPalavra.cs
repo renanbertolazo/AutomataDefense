@@ -129,14 +129,14 @@ public class GeradorPalavra : MonoBehaviour {
             random = linguagens_utilizadas[0];
         }
 
-        //Linguagem random = Random_Linguagem(3);
-        //return random.dir_imagem;
-        return "aa";
-        //return random.Random_Palavra();
+        
+        return random.Random_Palavra();
+        //return "aa";
     }
 
     private int RandomValue(int ini, int fim) {
-        return UnityEngine.Random.RandomRange(ini, fim);
+        //return UnityEngine.Random.RandomRange(ini, fim);
+        return UnityEngine.Random.RandomRange(ini, fim+1);
     }
 
     public Linguagem Random_Linguagem_Utilizada(int ini) {
