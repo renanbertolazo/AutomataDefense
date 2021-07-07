@@ -22,6 +22,7 @@ public class Jogo : MonoBehaviour
         tempo = Time.time + 2;
         UpdateNivel();
         Mecanica();
+        Chegada.Instance.Atualiza_Monstro_Civil(qtd_monstro, qtd_civil);
     }
 
     // Update is called once per frame
@@ -29,13 +30,27 @@ public class Jogo : MonoBehaviour
         ChecaGameOver();
         AtualizaStatusJogador();
         AtualizaNivel();
-        if (qtd_monstro == 0 && qtd_civil == 0) {
+        if(nivel < 9) {
+            if (qtd_monstro == 0 && qtd_civil == 0) {
             UpdateNivel();
             ChecaVitoria();
             Mecanica();
+            Chegada.Instance.Atualiza_Monstro_Civil(qtd_monstro, qtd_civil);
             tempo += 10;
+            }
+        } else {
+            ChecaVitoria();
         }
-        GeradorMonstro();
+        
+        /*if (Chegada.Instance.Checa_Monstro_Civil() == 0) {
+            UpdateNivel();
+            ChecaVitoria();
+            Mecanica();
+            Chegada.Instance.Atualiza_Monstro_Civil(qtd_monstro, qtd_civil);
+            tempo += 10;
+        }*/
+        if (qtd_monstro > 0 || qtd_civil > 0) 
+            GeradorMonstro();
     }
 
     private void GeradorMonstro() {
@@ -69,6 +84,7 @@ public class Jogo : MonoBehaviour
     }
 
     private void UpdateNivel() {
+        if(nivel > 9) return;
         nivel += 1;
     }
     private void Mecanica() {
@@ -120,7 +136,7 @@ public class Jogo : MonoBehaviour
     }
 
     private void ChecaVitoria() {
-        if(nivel > 9 && qtd_civil == 0 && qtd_monstro == 0 && !RecursosJogador.Instance.IsGameOver()) {
+        if(nivel == 9 && qtd_civil == 0 && qtd_monstro == 0 && !RecursosJogador.Instance.IsGameOver() && Chegada.Instance.Checa_Monstro_Civil() == 0) {
             this.transform.GetChild(2).gameObject.SetActive(true);
             Time.timeScale = 0;
         }

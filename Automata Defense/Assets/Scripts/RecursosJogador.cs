@@ -24,7 +24,7 @@ public class RecursosJogador : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if(vidaJogador <= 0){
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
             GameOver(true);
         }
         //Debug.Log(vidaJogador);
@@ -52,7 +52,14 @@ public class RecursosJogador : MonoBehaviour {
     }
 
     public void DiminuiScore(int valor) {
-        scoreJogador -= valor;
+        int aux = scoreJogador;
+        aux -= valor;
+
+        if(aux <=0) scoreJogador = 0;
+        else{
+            scoreJogador -= valor;
+        }
+        
     }
 
 }
