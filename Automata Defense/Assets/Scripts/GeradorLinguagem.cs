@@ -88,8 +88,10 @@ public class GeradorLinguagem : MonoBehaviour {
         facil_1.Add("0100000");
         facil_1.Add("01000000");
         facil_1.Add("010000000");
-        Linguagem linguagem_facil_1 = new Linguagem(facil_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_1.jpg");
-
+        Texture2D textura_facil_1 = Resources.Load("facil_1", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_facil_1 = new Linguagem(facil_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_1.jpg");
+        Linguagem linguagem_facil_1 = new Linguagem(facil_1, textura_facil_1);
+        
         List<string> facil_2 = new List<string>();
         facil_2.Add("1");
         facil_2.Add("01");
@@ -99,7 +101,10 @@ public class GeradorLinguagem : MonoBehaviour {
         facil_2.Add("0100");
         facil_2.Add("100");
         facil_2.Add("0100");
-        Linguagem linguagem_facil_2 = new Linguagem(facil_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_2.jpg");
+
+        Texture2D textura_facil_2 = Resources.Load("facil_2", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_facil_2 = new Linguagem(facil_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_2.jpg");
+        Linguagem linguagem_facil_2 = new Linguagem(facil_2, textura_facil_2);
 
         List<string> facil_3 = new List<string>();
         facil_3.Add("1");
@@ -110,7 +115,10 @@ public class GeradorLinguagem : MonoBehaviour {
         facil_3.Add("111111");
         facil_3.Add("1111111");
         facil_3.Add("11111111");
-        Linguagem linguagem_facil_3 = new Linguagem(facil_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_3.jpg");
+
+        Texture2D textura_facil_3 = Resources.Load("facil_3", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_facil_3 = new Linguagem(facil_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_3.jpg");
+        Linguagem linguagem_facil_3 = new Linguagem(facil_3, textura_facil_3);
 
         List<string> facil_4 = new List<string>();
         facil_4.Add("1");
@@ -121,7 +129,10 @@ public class GeradorLinguagem : MonoBehaviour {
         facil_4.Add("101");
         facil_4.Add("011");
         facil_4.Add("00111");
-        Linguagem linguagem_facil_4 = new Linguagem(facil_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_4.jpg");
+
+        Texture2D textura_facil_4 = Resources.Load("facil_4", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_facil_4 = new Linguagem(facil_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_4.jpg");
+        Linguagem linguagem_facil_4 = new Linguagem(facil_4, textura_facil_4);
 
         List<string> facil_5 = new List<string>();
         facil_5.Add("01");
@@ -132,7 +143,10 @@ public class GeradorLinguagem : MonoBehaviour {
         facil_5.Add("010101010101");
         facil_5.Add("01010101010101");
         facil_5.Add("0101010101010101");
-        Linguagem linguagem_facil_5 = new Linguagem(facil_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_5.jpg");
+
+        Texture2D textura_facil_5 = Resources.Load("facil_5", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_facil_5 = new Linguagem(facil_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\facil_5.jpg");
+        Linguagem linguagem_facil_5 = new Linguagem(facil_5, textura_facil_5);
     
         linguagens_facil.Add(linguagem_facil_1);
         linguagens_facil.Add(linguagem_facil_2);
@@ -151,7 +165,10 @@ public class GeradorLinguagem : MonoBehaviour {
         medio_1.Add("abbcc");
         medio_1.Add("aabcc");
         medio_1.Add("aaabc");
-        Linguagem linguagem_medio_1 = new Linguagem(medio_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_1.jpg");
+
+        Texture2D textura_medio_1 = Resources.Load("medio_1", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_medio_1 = new Linguagem(medio_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_1.jpg");
+        Linguagem linguagem_medio_1 = new Linguagem(medio_1, textura_medio_1);
 
         List<string> medio_2 = new List<string>();
         medio_2.Add("abc");
@@ -162,7 +179,10 @@ public class GeradorLinguagem : MonoBehaviour {
         medio_2.Add("bbc");
         medio_2.Add("bbb");
         medio_2.Add("aaa");
-        Linguagem linguagem_medio_2 = new Linguagem(medio_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_2.jpg");
+
+        Texture2D textura_medio_2 = Resources.Load("medio_2", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_medio_2 = new Linguagem(medio_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_2.jpg");
+        Linguagem linguagem_medio_2 = new Linguagem(medio_2, textura_medio_2);
 
         List<string> medio_3 = new List<string>();
         medio_3.Add("abc");
@@ -173,7 +193,11 @@ public class GeradorLinguagem : MonoBehaviour {
         medio_3.Add("aab");
         medio_3.Add("ab");
         medio_3.Add("aabcc");
-        Linguagem linguagem_medio_3 = new Linguagem(medio_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_3.jpg");
+
+        Texture2D textura_medio_3 = Resources.Load("medio_3", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_medio_3 = new Linguagem(medio_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_3.jpg");
+        Linguagem linguagem_medio_3 = new Linguagem(medio_3, textura_medio_3);
+
 
         List<string> medio_4 = new List<string>();
         medio_4.Add("abc");
@@ -184,7 +208,10 @@ public class GeradorLinguagem : MonoBehaviour {
         medio_4.Add("aaacccc");
         medio_4.Add("aaabbcccc");
         medio_4.Add("aabbbcccc");
-        Linguagem linguagem_medio_4 = new Linguagem(medio_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_4.jpg");
+
+        Texture2D textura_medio_4 = Resources.Load("medio_4", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_medio_4 = new Linguagem(medio_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_4.jpg");
+        Linguagem linguagem_medio_4 = new Linguagem(medio_4, textura_medio_4);
 
         List<string> medio_5 = new List<string>();
         medio_5.Add("01");
@@ -195,7 +222,10 @@ public class GeradorLinguagem : MonoBehaviour {
         medio_5.Add("0111");
         medio_5.Add("0011111");
         medio_5.Add("00111111");
-        Linguagem linguagem_medio_5 = new Linguagem(medio_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_5.jpg");
+
+        Texture2D textura_medio_5 = Resources.Load("medio_5", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_medio_5 = new Linguagem(medio_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\medio_5.jpg");
+        Linguagem linguagem_medio_5 = new Linguagem(medio_5, textura_medio_5);
     
         linguagens_medio.Add(linguagem_medio_1);
         linguagens_medio.Add(linguagem_medio_2);
@@ -214,7 +244,10 @@ public class GeradorLinguagem : MonoBehaviour {
         dificil_1.Add("ababab");
         dificil_1.Add("ababcccc");
         dificil_1.Add("abcc");
-        Linguagem linguagem_dificil_1 = new Linguagem(dificil_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_1.jpg");
+
+        Texture2D textura_dificil_1 = Resources.Load("dificil_1", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_dificil_1 = new Linguagem(dificil_1,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_1.jpg");
+        Linguagem linguagem_dificil_1 = new Linguagem(dificil_1, textura_dificil_1);
 
         List<string> dificil_2 = new List<string>();
         dificil_2.Add("abcd");
@@ -225,7 +258,10 @@ public class GeradorLinguagem : MonoBehaviour {
         dificil_2.Add("abcdcdcd");
         dificil_2.Add("ababcdcdcd");
         dificil_2.Add("abababcd");
-        Linguagem linguagem_dificil_2 = new Linguagem(dificil_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_2.jpg");
+
+        Texture2D textura_dificil_2 = Resources.Load("dificil_2", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_dificil_2 = new Linguagem(dificil_2,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_2.jpg");
+        Linguagem linguagem_dificil_2 = new Linguagem(dificil_2, textura_dificil_2);
 
         List<string> dificil_3 = new List<string>();
         dificil_3.Add("ababababccc");
@@ -236,7 +272,10 @@ public class GeradorLinguagem : MonoBehaviour {
         dificil_3.Add("abccccc");
         dificil_3.Add("ababccc");
         dificil_3.Add("abababcccc");
-        Linguagem linguagem_dificil_3 = new Linguagem(dificil_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_3.jpg");
+
+        Texture2D textura_dificil_3 = Resources.Load("dificil_3", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_dificil_3 = new Linguagem(dificil_3,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_3.jpg");
+        Linguagem linguagem_dificil_3 = new Linguagem(dificil_3, textura_dificil_3);
 
         List<string> dificil_4 = new List<string>();
         dificil_4.Add("bb");
@@ -247,7 +286,10 @@ public class GeradorLinguagem : MonoBehaviour {
         dificil_4.Add("babababababb");
         dificil_4.Add("babababababababb");
         dificil_4.Add("bababababababababb");
-        Linguagem linguagem_dificil_4 = new Linguagem(dificil_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_4.jpg");
+
+        Texture2D textura_dificil_4 = Resources.Load("dificil_4", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_dificil_4 = new Linguagem(dificil_4,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_4.jpg");
+        Linguagem linguagem_dificil_4 = new Linguagem(dificil_4, textura_dificil_4);
 
         List<string> dificil_5 = new List<string>();
         dificil_5.Add("baba");
@@ -258,7 +300,10 @@ public class GeradorLinguagem : MonoBehaviour {
         dificil_5.Add("babababababa");
         dificil_5.Add("bababababababa");
         dificil_5.Add("babababababababa");
-        Linguagem linguagem_dificil_5 = new Linguagem(dificil_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_5.jpg");
+
+        Texture2D textura_dificil_5 = Resources.Load("dificil_5", typeof(Texture2D)) as Texture2D;
+        //Linguagem linguagem_dificil_5 = new Linguagem(dificil_5,@"C:\Users\renan\Desktop\Linguagens\Linguagens_AD\Fotos_AD\dificil_5.jpg");
+        Linguagem linguagem_dificil_5 = new Linguagem(dificil_5, textura_dificil_5);
     
         linguagens_dificil.Add(linguagem_dificil_1);
         linguagens_dificil.Add(linguagem_dificil_2);

@@ -188,14 +188,42 @@ public class GeradorPalavra : MonoBehaviour {
     public void AtualizaImagens() {
         try {
             if(nivel < 4) {
-                image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
-                image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
-                image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
+                if(linguagens_utilizadas[0].dir_imagem == null) {
+                    image1.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[0].textura_imagem);
+                } else {
+                    image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
+                }
+                if(linguagens_utilizadas[1].dir_imagem == null) {
+                    image2.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[1].textura_imagem);
+                } else {
+                    image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
+                }
+                if(linguagens_utilizadas[2].dir_imagem == null) {
+                    image3.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[2].textura_imagem);
+                } else {
+                    image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
+                }
             } else {
-                image0.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
-                image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
-                image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
-                image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[3].dir_imagem);
+                if(linguagens_utilizadas[0].dir_imagem == null) {
+                    image0.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[0].textura_imagem);
+                } else {
+                    image0.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[0].dir_imagem);
+                }
+                if(linguagens_utilizadas[1].dir_imagem == null) {
+                    image1.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[1].textura_imagem);
+                } else {
+                    image1.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[1].dir_imagem);
+                }
+                if(linguagens_utilizadas[2].dir_imagem == null) {
+                    image2.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[2].textura_imagem);
+                } else {
+                    image2.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[2].dir_imagem);
+                }
+                if(linguagens_utilizadas[3].dir_imagem == null) {
+                    image3.GetComponent<ImageLoader>().EnviarImagemPorTextura(linguagens_utilizadas[3].textura_imagem);
+                } else {
+                    image3.GetComponent<ImageLoader>().EnviarImagem(linguagens_utilizadas[3].dir_imagem);
+                }
             }
             
         } catch(System.ArgumentOutOfRangeException) {

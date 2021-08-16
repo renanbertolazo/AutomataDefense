@@ -17,6 +17,31 @@ public class ImageLoader : MonoBehaviour {
         StartCoroutine(downloadImage(url));
     }
 
+    public void EnviarImagemPorTextura(Texture2D textura) {
+        /*
+        //if(textura == null) print("Textura Nula");
+        Texture2D texture2d = new Texture2D(8, 8);
+        //texture2d = textura;
+        texture2d.LoadImage(textura.GetRawTextureData());
+        //Sprite sprite = Sprite.Create(textura, new Rect(0, 0, textura.width, textura.height), Vector2.zero);
+        texture2d.Apply();
+        Sprite sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), Vector2.zero);
+        
+        print(imageToUpdate.color);
+        //imageToUpdate.sprite = null;*/
+        StartCoroutine(downloadTextura(textura));
+        
+    }
+
+    IEnumerator downloadTextura(Texture2D textura) {
+        yield return null;
+
+        Sprite sprite = Sprite.Create(textura, new Rect(0, 0, textura.width, textura.height), Vector2.zero);
+        
+        imageToUpdate.sprite = sprite;
+
+    }
+    
     IEnumerator downloadImage(string url) {
 
         UnityWebRequest www = UnityWebRequest.Get(url);
