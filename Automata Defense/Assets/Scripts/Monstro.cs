@@ -43,9 +43,9 @@ public class Monstro : MonoBehaviour {
 
     void VerificaVida() {
         if (vida <= 0) {
+            RecursosJogador.Instance.AumentaScore(10);
+            Chegada.Instance.Diminui_Monstro_Civil();
             Destroy(this.gameObject,0);
-            //score aumentando bruscamente precisa concertar..
-            RecursosJogador.Instance.AumentaScore(1);
         }
     }
 
@@ -63,5 +63,12 @@ public class Monstro : MonoBehaviour {
         string resultado = "Monstro";
         
         return resultado;
+    }
+
+    void OnMouseDown() {
+        RecursosJogador.Instance.DiminuiScore(10);
+        RecursosJogador.Instance.DiminuiVida(1);
+        Chegada.Instance.Diminui_Monstro_Civil();
+        Destroy(this.gameObject,0);
     }
 }

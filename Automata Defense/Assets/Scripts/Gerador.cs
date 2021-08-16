@@ -23,14 +23,14 @@ public class Gerador : MonoBehaviour {
         Vector2 pos = this.transform.position;
         int aux = RandomValue(1, 4);
         if(aux == 1) {
-            pos.y = pos.y + 2;
+            pos.y = pos.y + 3;
             Instantiate(Monstro, pos, Quaternion.identity);
         }
         if(aux == 2) {
             Instantiate(Monstro, pos, Quaternion.identity);
         }
         if(aux == 3) {
-            pos.y = pos.y - 2;
+            pos.y = pos.y - 3;
             Instantiate(Monstro, pos, Quaternion.identity);
         }
         //print("oi");

@@ -46,9 +46,10 @@ public class Civil : MonoBehaviour {
 
     void VerificaVida() {
         if (vida <= 0) {
+            RecursosJogador.Instance.DiminuiScore(10);
+            RecursosJogador.Instance.DiminuiVida(1);
+            Chegada.Instance.Diminui_Monstro_Civil();
             Destroy(this.gameObject,0);
-            //score aumentando bruscamente precisa concertar..
-            RecursosJogador.Instance.DiminuiScore(1);
         }
     }
 
@@ -66,5 +67,12 @@ public class Civil : MonoBehaviour {
         string resultado = "Civil";
         
         return resultado;
+    }
+
+    void OnMouseDown() {
+        RecursosJogador.Instance.DiminuiScore(10);
+        RecursosJogador.Instance.DiminuiVida(1);
+        Chegada.Instance.Diminui_Monstro_Civil();
+        Destroy(this.gameObject,0);
     }
 }

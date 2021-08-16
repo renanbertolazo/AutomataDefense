@@ -23,6 +23,10 @@ public class Chegada : MonoBehaviour {
         return qtd_monstro_civil;
     }
 
+    public void Diminui_Monstro_Civil() {
+        qtd_monstro_civil -= 1;
+    }
+
     //DETECTA SE O OBJETO QUE COLIDIU É DA TAG PLAYER, E DESTROI O OBJETO, E DIMINUI A VIDA E O SCORE
     public void OnCollisionEnter2D(Collision2D collision2D) {   
         //Debug.Log("Colidiu");

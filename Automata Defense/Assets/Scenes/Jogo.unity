@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38809e833859984493725499c6f8d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  qtd_monstro_civil: 0
 --- !u!50 &312298482
 Rigidbody2D:
   serializedVersion: 4
@@ -7643,8 +7644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 198.45001}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 239.55, y: 200.14}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431087924
 MonoBehaviour:
@@ -12708,8 +12709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 198.45001}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 330.52, y: 200.69}
+  m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981414932
 MonoBehaviour:
