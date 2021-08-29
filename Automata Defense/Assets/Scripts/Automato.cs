@@ -168,7 +168,7 @@ class Automato : MonoBehaviour {
                 //final += s[i];
                 i++;
             } while (s[i] != ',' && s[i] != '}');
-            //final = final.Replace(",","");
+            final = final.Replace(",","");
             //final = final.Replace(" ","");
             finais.Add(final);
             //Console.WriteLine(final);

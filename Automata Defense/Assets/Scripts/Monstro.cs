@@ -67,7 +67,7 @@ public class Monstro : MonoBehaviour {
 
     void OnMouseDown() {
         RecursosJogador.Instance.DiminuiScore(10);
-        RecursosJogador.Instance.DiminuiVida(1);
+        //RecursosJogador.Instance.DiminuiVida(1);
         Chegada.Instance.Diminui_Monstro_Civil();
         Destroy(this.gameObject,0);
     }

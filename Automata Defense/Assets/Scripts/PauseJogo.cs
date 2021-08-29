@@ -15,4 +15,10 @@ public class PauseJogo : MonoBehaviour {
     public void Despause() {
         Time.timeScale = 1;
     }
+
+    /*void Update() {
+        if(Input.GetKeyDown(KeyCode.K)){
+            Time.timeScale = 5;
+        }
+    }*/
 }
